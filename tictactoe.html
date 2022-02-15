@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td {
+             border: 1px solid black;
+        }
+        table {
+            width: 400px;
+            height:400px;
+        }
+        table td {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            width:130px;
+            height: 130px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tab">
+        <tr class="0">
+            <td class="0"></td><td class="1"></td><td class="2"></td>
+        </tr>
+        <tr class="1">
+            <td class="0"></td><td class="1"></td><td class="2"></td>
+        </tr>
+        <tr class="2">
+            <td class="0"></td><td class="1"></td><td class="2"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    var tab = document.getElementById("tab");
+    var n = 1;
+    var arr = [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]];
+    function toggle(e) {
+        if(n%2==0){
+         e.target.innerHTML = 1;
+         arr[e.target.parentNode.className][e.target.className] = 1;
+        }
+        else{
+            e.target.innerHTML = 0;
+            arr[e.target.parentNode.className][e.target.className] = 0;
+        }
+        if(n==10){
+            n=1;
+        }
+        n++;
+        var ans = check();
+        if(ans==0 || ans==1){
+            console.log(ans);
+            alert(ans);
+        }
+    }
+    function check(){
+        if(arr[0][0]!=-1&&arr[0][0]==arr[0][1]&&arr[0][1]==arr[0][2]){
+            return arr[0][0];
+        }
+        else if(arr[1][0]!=-1&&arr[1][0]==arr[1][1]&&arr[1][1]==arr[1][2]){
+            return arr[1][0];
+        }
+        else if(arr[2][0]!=-1&&arr[2][0]==arr[2][1]&&arr[2][1]==arr[2][2]){
+            return arr[2][0];
+        }
+        else if(arr[0][0]!=-1&&arr[0][0]==arr[1][0]&&arr[1][0]==arr[2][0]){
+            return arr[0][0];
+        }
+        else if(arr[0][2]!=-1&&arr[0][2]==arr[1][2]&&arr[1][2]==arr[2][2]){
+            return arr[0][2];
+        }
+        else if(arr[0][0]!=-1&&arr[0][0]==arr[1][1]&&arr[1][1]==arr[2][2]){
+            return arr[0][0];
+        }
+        else if(arr[0][2]!=-1&&arr[0][2]==arr[1][1]&&arr[1][1]==arr[2][0]){
+            return arr[0][2];
+        }
+        return -1;
+    }
+    tab.addEventListener("click", toggle)
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dis {
+            margin-top:500px;
+            width:30%;
+            height: 300px;
+            background-color:black;
+            border:1px solid white;
+            color:white;
+            margin: auto;
+            margin-top:100px;
+            text-align:center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="dis">
+        <div id="hr">0</div><div id="min">0</div><div id="sec">0</div>
+    </div>
+    <button id="start">start</button><button id="stop">pause</button>
+</body>
+<script>
+    var hr = document.getElementById("hr");
+    var min = document.getElementById("min");
+    var sec = document.getElementById("sec");
+    var id;
+    function startTimer(){
+        console.log("hii")
+        if(id){
+            console.log("sorry")
+            return
+        }
+        id = setInterval(()=>{
+            if(sec.innerHTML<60){
+                var second = Number(sec.innerHTML) + 1;
+                sec.innerHTML = second
+                console.log(second)
+            }
+            if(sec.innerHTML == 60){
+                var second = 0;
+                sec.innerHTML = second;
+                var minute = Number(min.innerHTML) + 1;
+                min.innerHTML = minute
+            }
+            if(min.innerHTML == 60){
+                console.log("00000000000")
+                var minute = 0;
+                min.innerHTML = minute;
+                var hour = Number(hr.innerHTML) + 1;
+                hr.innerHTML = hour;
+            }
+        },5)    
+    }
+    function pauseTimer(){
+        clearInterval(id)
+        id = null;
+        console.log("pauseTimer")
+    }
+    var on = document.getElementById("start");
+    var off = document.getElementById("stop");
+    on.addEventListener('click', startTimer)
+    off.addEventListener('click',pauseTimer)
+</script>
+</html>
