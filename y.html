@@ -6,39 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div {
-            width: 500px;
-            height: 500px;
-            background-color: red;
-            margin:auto;
+        #a {
+            width: 700px;
+            height: 700px;
+            border: 1px solid black;
+            background-color: teal;
+            display: grid;
+            /* justify-content: center;
+            align-items: center; */
+            place-items: center;
         }
-        div div {
-            height: 100px;
-            width: 100px;
-            background-color: black;
-            border: 1px solid white;
-            margin: 20px;
+        #b {
+            width: 250px;
+            height: 250px;
+            border: 1px solid black;
+            background-color:white;
+            /* display: inline-block; */
         }
-        #a{
-            /* position:static; */
-            background-color: black;
-            /* transform:rotate(40deg) */
-        }
-        /* #d{
-            background-color:blue;
-            position: relative;
-        } */ 
     </style>
 </head>
 <body>
     <div>
-        <div id="a"></div>
+        <div id="a">
+            <p>nikhil</p>
+        </div>
         <!-- <div id="b"></div>
         <div id="c"></div>
         <div id="d"></div> -->
     </div>
 </body>
-<script>
+<!-- <script>
     const a = document.getElementById("a");
     var deg = 10;
     const fn = ()=>{
@@ -49,5 +46,5 @@
         },1000)
     }
     window.addEventListener("load",fn)
-</script>
+</script> -->
 </html>

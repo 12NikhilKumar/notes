@@ -371,13 +371,27 @@
 //     }
 
 // }
-// sub(str,"")
-var s = "A man, a plan, a canal: Panama";
-var res = "";
-for (var i = 0; i <s.length; i++){
-    if(s[i]!=="" || s[i]!==":" || s[i]!==","){
-        res += s[i];
-    }
-}
-console.log(res.trim(':'));
+// // sub(str,"")
+// var s = "A man, a plan, a canal: Panama";
+// var res = "";
+// for (var i = 0; i <s.length; i++){
+//     if(s[i]!=="" || s[i]!==":" || s[i]!==","){
+//         res += s[i];
+//     }
+// }
+// console.log(res.trim(':'));
+
+//group anagram in same aaray
+// var str = ["eat","tea","tan","ate","nat","bat"];
+// var obj = {};
+// for(var i=0;i<str.length;i++){
+//     var arr = str[i].split('').sort().join('')
+//     if(obj[arr]){
+//         obj[arr].push(i)
+//     }
+//     else{
+//         obj[arr] = [i]
+//     }
+// }
+// console.log(obj)
 

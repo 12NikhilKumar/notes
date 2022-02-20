@@ -384,9 +384,132 @@
 // };
     
 
-function fun(){
-    a=4
-    return a;
-}
-// fun()
-console.log(fun())
+// function fun(){
+//     a=4
+//     return a;
+// }
+// // fun()
+// console.log(fun())
+// var arr = [1,2,3,4,5];
+// for(var i=0; i<arr.length; i++){
+//     setTimeout(function(i){
+//         return function(){
+//             console.log(arr[i],i);
+//         }
+//     }(i),i*100)
+// }
+
+// (function fun(){
+//     console.log(5)
+// }())
+
+// var str = "masai";
+// var arr = str.split('/n');
+// console.log(arr)
+
+// var str = ['masai','javaScript','html','css'];
+// var obj = {};
+// for(let i=str.length-2;i>=0;i--){
+//     obj[str[i]] = {...obj};
+//     delete obj[str[i+1]]
+// }
+// console.log(obj.masai.javaScript);
+
+//flatening a object
+// var n = 0;
+// function fun(n,str,obj){
+//     if(n==str.length-1){
+//         return obj
+//     }
+//     else{
+//         n++
+//         return {[str[n]] : fun(n,str,obj)}
+//     }
+// }
+// console.log(fun(n,str,obj))
+
+
+//flatering an array
+// var arr = [1,2,3,[4,5,6],7,8,[9,10,[11,12]]];
+// function customFlat(arr){
+//     let res = [];
+//     arr.forEach((el)=>{
+//         if(Array.isArray(el)){
+//             res.push(...customFlat(el))
+//         }
+//         else{
+//             res.push(el)
+//         }
+//     })
+//     return res
+// }
+// console.log(customFlat(arr))
+
+
+// var arr = [1,2,3,4,5];
+// for(var i = 0; i < arr.length; i++){
+//     setTimeout(function(i){
+//         return function(){
+//             console.log(i,arr[i]);
+//         }
+//     }(i),i*100)
+// }
+
+//memoized function 
+// function memoized(fn){
+//     const res = {};
+//     return function(...args){
+//         var cahe = JSON.stringify(args);
+//         if(!res[cahe]){
+//             // console.log(...args)
+//             res[cahe] = fn.call(this,...args);
+//             return res[cahe]
+//         }
+//         else{
+//             return res[cahe];
+//         }
+//     }
+// }
+
+// var pod = (a,b)=>{
+//     for(var i=0; i<1000000; i++){
+
+//     }
+//     return a*b
+// };
+// const memoizedPod = memoized(pod)
+// console.log(memoizedPod(1,3))
+// console.log(memoizedPod(1,3))
+
+//infinite currying
+//  function fun(a){
+//      return function(b){
+//          if(!b){
+//              return a
+//          }
+//          else {
+//              return fun(a+b)
+//          }
+//      }
+//  }
+//  console.log(fun(5)(6)(7)(3)())
+
+//prototype method chain
+
+// const obj = {
+//     total: 0,
+//     add(a){
+//         this.total += a
+//         return this
+//     },
+//     multiple(a){
+//         this.total *= a
+//         return this
+//     },
+//     sub(a){
+//         this.total -= a
+//         return this
+//     }
+// }
+// var res = obj.add(10).multiple(10).sub(1)
+// console.log(res.total)

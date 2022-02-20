@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* table tr td {
+            border: 1px solid black;
+            width:100px;
+            height:100px;
+        } */
+        /* p {
+            display: block;
+            border: 1px solid black;
+        } */
+        #a{
+            width:600px;
+            height: 600px;
+            border: 1px solid black;
+            background-color:black;
+            position: relative;
+        }
+        .b {
+            width:200px;
+            height: 200px;
+            background-color:aqua;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #b {
+            width: 400px;
+            height: 400px;
+            background-color:black;
+            color: white;
+            /* text-align: center; */
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        <div class="b"></div>
+    </div>
+    <div id="b">
+        <p>nikhil</p>
+    </div>
+</body>
+</html>
